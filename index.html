@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asian100</title>
+    <style>
+
+@media (max-width: 1000px) {
+    #bottomright {
+        display: block; 
+        top: 3vh; 
+        left: 3vw; 
+      } 
+	body {
+      background-color: red; 
+
+      }
+}
+
+
+        #homeDelivery {
+            position: absolute;
+            background-color: lightgreen;
+            color: red;
+            width: 100vw;
+            height: 30px;
+            top: 0px;
+            left: 0px;
+            font-family: Arial, sans-serif;
+        }
+
+
+        #welcomeHome {
+            position: absolute;
+            color: darkred;
+            font-size: x-large;
+            top: 0px;
+            right: 0px;
+            font-family: Arial, sans-serif;
+            opacity:1;
+            z-index: 100;
+        }
+
+
+
+        #WH {
+            position: absolute;
+            color: darkred;
+            font-size: xx-large;
+            width: 100vw;
+            height: 30px;
+            top: 0px;
+            right: 0px;
+            font-family: Arial, sans-serif;
+            background-color: lightgreen;
+            z-index: 10000;
+            opacity:0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        #WH:hover {
+            opacity: 1;
+        }
+
+
+        #image100 {
+            position: absolute;
+            top: 40px;
+            left: 10px;
+            width: 180px;
+            height: 150px;
+        }
+
+        #imageSearch {
+            position: absolute;
+            top: 30px;
+            left: 30%;
+            width: 600px;
+            height: 150px;
+        }
+
+       #iS{
+        display: none;
+            position: absolute;
+            top: 80px;
+            left: 32%;
+            color: darkred;
+            z-index: 1000;
+        }
+
+        #imageCart {
+            position: absolute;
+            top: 65px;
+            right: 10px;
+            width: 70px;
+            height: 70px;
+        }
+
+        #SC{
+            position: absolute;
+            top: 150px;
+            right: 10px;
+            color: darkred
+        }
+
+        #categories {
+            position: absolute;
+            top: 220px;
+            left: 50px;
+            color: darkgreen;
+            font-size: x-large;
+            font-family: Arial, sans-serif;
+        }
+
+
+        #CT{
+            display: none;
+            position: relative;
+            background: lightgreen;
+            top: 70px;
+            left: 50px;
+            width: 160px;
+            height: 200px; 
+            z-index: 10005;
+            font-family: Arial, sans-serif;
+            border-radius: 10%;
+            color: darkred;
+        }
+
+
+/* Hover zones inside CT */
+.hoverZone {
+    position: absolute;
+    width: 100%;
+    height: 40px; /* Define hover area sizes */
+    left: 0;
+}
+
+#zone1 { top: 0px; }
+#zone2 { top: 40px; }
+#zone3 { top: 80px; }
+#zone4 { top: 120px; }
+#zone5 { top: 160px; }
+
+/* Initially hidden images */
+#TigerMom, #StraightA, #FoxEye, #ITguy, #Waitress {
+    position: absolute;
+    left: 0px;
+    z-index: 10006;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+#TigerMom { top: 40px; width: 300px; height:300px;}
+#StraightA { top: 80px; }
+#FoxEye { top: 120px; }
+#ITguy { top: 160px; }
+#Waitress { top: 200px; }
+
+/* Show the entire div (with image inside) when hovering */
+#zone1:hover ~ #TigerMom,
+#zone2:hover ~ #StraightA,
+#zone3:hover ~ #FoxEye,
+#zone4:hover ~ #ITguy,
+#zone5:hover ~ #Waitress {
+    opacity: 1;
+}
+
+
+
+
+        #deals {
+            position: absolute;
+            top: 220px;
+            left:48%;
+            color: darkgreen;
+            font-size: x-large;
+            font-family: Arial, sans-serif;
+        }
+
+        #DL{          
+            display: none;
+            position: absolute;
+            background: lightgreen;
+            top: 260px;
+            left:48%;
+            width: 160px;
+            z-index: 10005;
+            font-family: Arial, sans-serif;
+            border-radius: 10%;
+            transition: width height 0.3s ease-in-out;
+            color: darkred;
+        }
+
+        #DL:hover {
+            width: 200px;
+            height: 200px;
+
+        }
+
+        #timerDisplay {
+            position: absolute;
+            font-size: 24px;
+            top: 30px;
+            left: 50%;
+            color: red;
+            z-index: 10004;
+        }
+
+        #whitePeopleMenu {
+            position: absolute;
+            top: 220px;
+            right: 100px;
+            color: darkgreen;
+            font-size: x-large;
+            font-family: Arial, sans-serif;
+        }
+
+        #WPM{
+            display: none;
+            position: absolute;
+            background: lightgreen;
+            top: 260px;
+            right: 50px;
+            width: 160px;
+            z-index: 10000;
+            font-family: Arial, sans-serif;
+            border-radius: 10%;
+            color: darkred;
+        }
+
+        #codeOffer {
+            position: absolute;
+            top: 280px;
+            left: 10px;
+            color: darkred;
+            font-size: large;
+            font-family: Arial, sans-serif;
+        }
+
+
+
+        #imageChicken {
+            position: absolute;
+            top: 320px;
+            left: 0px;
+            width: 300px;
+            height: 300px;
+        }
+
+        #iCK{
+            opacity: 0;
+            position: absolute;
+            color: darkred;
+            background: lightgreen;
+            top: 310px;
+            left: 0px;
+            width: 320px;
+            z-index: 1000;
+            font-family: 'Times New Roman', Times, serif;
+            border-radius: 10%;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        #iCK:hover {
+            opacity: 1;
+
+        }
+    
+
+        #imagePork {
+            position: absolute;
+            top: 320px;
+            left: 28%;
+            width: 300px;
+            height: 300px;
+        }
+
+        #iPK{
+            opacity: 0;
+            position: absolute;
+            color: darkred;
+            background: lightgreen;
+            top: 310px;
+            left: 23%;
+            width: 380px;
+            z-index: 1000;
+            font-family: 'Times New Roman', Times, serif;
+            border-radius: 10%;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        #iPK:hover {
+            opacity: 1;
+
+        }
+    
+
+        #imageDumpling {
+            position: absolute;
+            top: 320px;
+            left: 53%;
+            width: 300px;
+            height: 300px;
+        }
+
+        #iDP{
+            opacity: 0;
+            position: absolute;
+            color: darkred;
+            background: lightgreen;
+            top: 310px;
+            left: 50%;
+            width: 380px;
+            z-index: 1000;
+            font-family: 'Times New Roman', Times, serif;
+            border-radius: 10%;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        #iDP:hover {
+            opacity: 1;
+
+        }
+
+        #imageBreakfast{
+            position: absolute;
+            top: 320px; 
+            right: 0px; 
+            width: 300px;
+            height: 300px;
+        }
+
+        #iBK{
+            opacity: 0;
+            position: absolute;
+            color: darkred;
+            background: lightgreen;
+            top: 310px; 
+            right: 0px;
+            width: 320px;
+            z-index: 1000;
+            font-family: 'Times New Roman', Times, serif;
+            border-radius: 10%;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        #iBK:hover {
+            opacity: 1;
+
+        }
+
+        #dishOfTheWeek {
+            position: absolute;
+            top: 650px;
+            left: 0px;
+            color: darkgreen;
+            font-size: xx-large;
+            background-color: lightgreen;
+            z-index: 100;
+            font-family: Arial, sans-serif;
+        }
+
+        #imageMoral {
+            position: absolute;
+            top: 651px;
+            left: 445px;
+            z-index: 10000;
+            opacity:1;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        #imageMoral:hover {
+            opacity: 0;
+        }
+
+        #imageMoral1 {
+            position: absolute;
+            top: 651px;
+            left: 695px;
+            z-index: 10000;
+            opacity:1;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        #imageMoral1:hover {
+            opacity: 0;
+        }
+
+        #imageMoral2 {
+            position: absolute;
+            top: 651px;
+            left: 945px;
+            z-index: 10000;
+            opacity:1;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        #imageMoral2:hover {
+            opacity: 0;
+        }
+
+        #imageMoral3 {
+            position: absolute;
+            top: 651px;
+            left: 1195px;
+            z-index: 10000;
+            opacity:1;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        #imageMoral3:hover {
+            opacity: 0;
+        }
+
+
+        #imageChiren {
+            position: absolute;
+            top: 650px;
+            left: 0px;
+            z-index: -1;
+            width: 100vw;
+            height: 80px;
+        }
+
+        #imageChiren img {
+            width: 100%;          
+            height: 80px;     
+            object-fit: cover; 
+        }
+
+        #imageSteamer {
+            position: absolute;
+            top: 770px;
+            left: 0px;
+            width: 300px;
+            height: 300px;
+            z-index: 1001;
+        }
+
+
+        #imageDishwasher {
+            position: absolute;
+            top: 770px;
+            left: 28%;
+            width: 300px;
+            height: 300px;
+            z-index: 1001;
+        }
+
+
+        #imageChopsticks {
+            position: absolute;
+            top: 770px;
+            left: 53%;
+            width: 300px;
+            height: 300px;
+            z-index: 1001;
+        }
+
+        #imagePan {
+            position: absolute;
+            top: 770px;
+            right: 0px;
+            width: 300px;
+            height: 300px;
+            z-index: 1001;
+        }
+
+
+        #chinaDirect {
+            position: absolute;
+            top: 1090px;
+            right: 0px;
+            color: red;
+            font-size: xx-large;
+            font-family: Arial, sans-serif;
+        }
+
+        #claimGiftVoucher {
+            position: absolute;
+            top: 1100px;
+            left: 0px;
+            color: darkred;
+            font-size: x-large;
+            background-color: lightgreen;
+            font-family: Arial, sans-serif;
+        }
+
+        #CVG{
+            position: absolute;
+            top: 1100px;
+            left: 0px;
+            z-index: 10000;
+            opacity:0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        #CVG:hover {
+            opacity: 1;
+
+        }
+
+        #imageTendon {
+            position: absolute;
+            top: 1165px;
+            left: 0px;
+            width: 300px;
+            height: 300px;
+        }
+
+        #TD{
+            display: none;
+            position: absolute;
+            background: lightgreen;
+            top: 1165px;
+            left: 0px;
+            width: 500px;
+            height: 300px;
+            text-align: center;
+            justify-content: center; 
+            align-items: center;
+            z-index: 10005;
+            font-family: 'Times New Roman', Times, serif;
+            border-radius: 10%;
+            color: darkred;
+        }
+
+
+        #imageInstestine {
+            position: absolute;
+            top: 1165px;
+            left: 28%;
+            width: 300px;
+            height: 300px;
+        }
+
+        #IT{
+            display: none;
+            position: absolute;
+            background: lightgreen;
+            top: 1165px;
+            left: 18%;
+            width: 500px;
+            height: 300px;
+            text-align: center;
+            justify-content: center; 
+            align-items: center;
+            z-index: 10005;
+            font-family: 'Times New Roman', Times, serif;
+            border-radius: 10%;
+            color: darkred;
+        }
+
+        #imageSausage {
+            position: absolute;
+            top: 1165px;
+            left: 53%;
+            width: 300px;
+            height: 300px;
+        }
+
+        
+        #SS{
+            display: none;
+            position: absolute;
+            background: lightgreen;
+            top: 1165px;
+            left: 45%;
+            width: 500px;
+            height: 300px;
+            text-align: center;
+            justify-content: center; 
+            align-items: center;
+            z-index: 10005;
+            font-family: 'Times New Roman', Times, serif;
+            border-radius: 10%;
+            color: darkred;
+        }
+
+        #imageSpicy {
+            position: absolute;
+            top: 1165px;
+            right: 0px;
+            width: 300px;
+            height: 300px;
+        }
+
+        #SP{
+            display: none;
+            position: absolute;
+            background: lightgreen;
+            top: 1165px;
+            right: 0px;
+            width: 500px;
+            height: 300px;
+            text-align: center;
+            justify-content: center; 
+            align-items: center;
+            z-index: 10005;
+            font-family: 'Times New Roman', Times, serif;
+            border-radius: 10%;
+            color: darkred;
+        }
+
+
+
+        #happyCustomers {
+            position: absolute;
+            top: 1490px;
+            left: 0px;
+            font-size: xx-large;
+            color: red;
+            font-family: Arial, sans-serif;
+        }
+
+
+        #imageCustomer1 {
+            position: absolute;
+            top: 1550px;
+            left: 70px;
+            width: 300px;
+            height: 300px;
+            color: darkred;
+        }
+
+
+        #imageCustomer2 {
+            position: absolute;
+            top: 1550px;
+            left: 40%;
+            width: 300px;
+            height: 300px;
+            color: darkred;
+        }
+
+
+        #imageCustomer3 {
+            position: absolute;
+            top: 1550px;
+            right:70px;
+            width: 300px;
+            height: 300px;
+            color: darkred;
+        }
+
+
+        #aboutUs {
+            position: absolute;
+            top: 2030px;
+            right: 50px;
+            font-size: x-large;
+            color: darkred;
+            font-family: Arial, sans-serif;
+            z-index: 1000;
+        }
+
+        
+      /* #iS1{
+        display: none;
+            position: absolute;
+            top: 2030px;
+            right: 50px;
+            color: darkred;
+            z-index: 10000;
+        }*/
+
+        #image100Again {
+            position: absolute;
+            top: 1990px;
+            left: 0px;
+            width: 100vw;
+            height: 130px;
+            background-color: lightgreen;
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+
+    <!-- hovers -->
+    <div id="SC"></div>
+    <div id="iS"><img src="answer.jpeg"></div>
+
+    <div id="WH">Maybe a bit too close to home...</div>
+
+    <div id="CT">        
+    <div id="zone1" class="hoverZone"></div>
+    <div id="zone2" class="hoverZone"></div>
+    <div id="zone3" class="hoverZone"></div>
+    <div id="zone4" class="hoverZone"></div>
+    <div id="zone5" class="hoverZone"></div>
+
+    <div id="TigerMom" class="hover-image"><img src="TigerMom.jpeg" width="300px" height="300px"></div>
+    <div id="StraightA" class="hover-image"><img src="StraightA.jpeg" width="300px" height="300px"></div>
+    <div id="FoxEye" class="hover-image"><img src="foxeye.jpg" width="300px" height="300px"></div>
+    <div id="ITguy" class="hover-image"><img src="ITguy.jpg" width="300px" height="300px"></div>
+    <div id="Waitress" class="hover-image"><img src="Waitress.jpg" width="300px" height="300px"></div>
+
+    <br>Tiger Mom<br><br>Straight A Student<br><br>Fox-eyed Dominatrix<br><br>IT Guy<br><br>Rude Waitress<br><br></div>
+    
+    <div id="DL"><br><br>Buy in to be one of the stereotypes NOW <br>to avoid confusion for the dear white audience!<br><br></div>
+    <div id="timerDisplay">Time: 0s</div>
+
+    <a id="WPM1" href=https://maps.app.goo.gl/aYnksRH2rK77HfEf6> <div id="WPM"> <br>Leave us a review to help us do even better!<br><br></a>
+    </div>
+
+    <div id="iCK"><br>鸡汤Ingredients 
+        <br> “The best parts are for the youngest of the family. Yes it happens to be your brother. 
+        <br>The leg was always yours before he came along!  What kind of big sister doesn’t know to sacrifice?”
+        <br>
+        <br>•	1 whole chicken--not just drumsticks, because life is not about what you want
+        <br>•	2 slices ginger--to mask the fishiness and doubt
+        <br>•	3 scallions--tied into a knot—like the knots in your stomach every time you hear, ‘Older sisters should be more considerate’
+        <br>•	5 dried red dates --sweet, as you should be for your younger siblings
+        <br>•	Goji berries--for nourishment, because you still have to be useful to the family
+        <br>•	Salt, to taste --but not too much—you shouldn’t ask for too much in life
+        <br>•	Water, enough to submerge everything --because some things are best swallowed whole
+        <br>
+        <br>
+        </div>
+
+    <div id="iPK"><br>红烧肉Ingredients
+        <br> “I only had these during spring festival as a kid because villagers only kills pigs once a year. 
+        <br>Now you have it on Wednesday for lunch. Aiyaya, how very lucky you are, you know?”
+        <br>•	500g pork belly--fatty, indulgent…too much luxury, but of course, you don’t know struggle
+        <br> •	2 tbsp oil—no such thing as too greasy to be healthy—that’s Western propaganda
+        <br>•	3 tbsp rock sugar—Yes add a bit of sugar to everything—don’t be bitter like your useless father
+        <br>•	2 tbsp light soy sauce -- Even though everyone ignores it, salty is still the most basic and important flavor
+        <br>•	1 tbsp dark soy sauce -- for color, because appearances matter
+        <br>•	2 tbsp Shaoxing wine—Essential because lazy Americans don’t neuter their pigs
+        <br>•	3 slices ginger—A bit spicy discipline builds character
+        <br>•	2 star anise--for complexity, unlike your simple, carefree attitude
+        <br>•	3 cloves garlic—Don’t care about your breath. Your ancestors never did and they did fine. Bad breath is Western propaganda
+        <br>
+        <br>
+        </div>
+
+    <div id="iDP"><br>饺子Ingredients
+        <br>“How can you call yourself family if you don’t even gather to make 饺子 together? 
+        <br>Store-bought? Frozen? Do you have no shame?”
+        
+        <br>•	500g ground pork – beat the flavors out of the meat
+        <br>•	200g Chinese chives—Again, bad breath is Western propaganda…also deodorants! We Asian no need it!
+        <br>•	1 tbsp soy sauce—Not too much, since you dip jiaozi in seasoning when eating, learn restraint
+        <br>•	1 tbsp oyster sauce—Keep these refrigerated or you die! In fact, this is how your uncle’s third cousin’s boss died!
+        <br>•	1 tsp sesame oil—it is the key to the fragrance
+        <br>•	1 egg --to bind everything together: Jiaozi is a food for reunion, keep your family close!
+        <br>•	1 tbsp cornstarch --to make it smooth, unlike our conversations
+        <br>•	Salt and white pepper --just a pinch, but of course, you never get the right amount,<br>too impatient—you get that from your father, you know? 
+        <br>•	Dumpling wrappers (手擀皮，not the trash factory-made ones!)--store-bought? Don’t even think about it. 
+        <br>If you’re too lazy to roll them yourself, at least buy fresh ones from the market!
+        <br><br>
+        </div>
+
+    <div id="iBK"><br>油条Ingredients (Because Skipping Breakfast is Not an Option)
+
+        <br> "What do you mean you’re not hungry? Breakfast is important! I don’t care if you like it or not—eat it. 
+        <br>Look, doesn’t your breakfast look like 100? That’s how much you’ll get on the test today! Right?"
+        <br>•	2 cups all-purpose flour--A strong foundation, like the discipline I drilled into you
+        <br>•	1 tsp baking powder--For growth, though not too much—don’t get ahead of yourself
+        <br>•	1/2 tsp salt --A pinch with control, because too much flavor and fun is bad for health
+        <br>•	1 egg (optional) --But why would you skip it? You think you know better than tradition? What, vegan? That’s Western propaganda!
+        <br>•	3/4 cup water --Not too hot, not too cold—because being “just right” is the only right way
+        <br>•	1 tbsp oil –just enough to make sure you don’t crack under pressure
+        <br>•	Enough oil for deep frying --Because a tough exterior is necessary in this world
+        <br>
+        <br>
+        </div>
+
+    <div id="iST"><img src="" ></div>
+    <div id="iDW"><img src="" ></div>
+    <div id="iCP"><img src="" ></div>
+    <div id="iP"><img src="" ></div>
+
+
+    <div id="TD"><br><br><br><br><br>Beef tendon takes a long time to cook. <br>But no time is too long for my mum. <br>My mom and I don't have a lot in common, but we're both foodies, <br>and we would spend hours on a dish. <br>I like the steam and anticipation condensing in the kitchen when cooking.<br> Also spending time with her.  </div>
+    <div id="IT"><br><br><br><br><br>I hate the “OMG you eat intestine?” bullshit.<br> Yes this organ used to touch shit, <br>but it’s less bullshit that what you’re giving me. <br>Fair if you never want to try it, <br>but don’t shit on my dish if you ever “tossed salad”. </div>
+    <div id="SS"><br><br><br><br><br>You would see these meatless sausages in front of <br>every elementary and middle school in China.<br> It’s made of mostly starch and a bunch of flavoring chemicals, <br>which are better for health than any mystery meat in the meat-containing suasages. <br>When I was in middle school, <br>1 yuan would by me one of these with corn bits, <br>and it would make my day. </div>
+    <div id="SP"><br><br><br><br><br>I love how unhealthy La Tiao are. <br>It’s basically this plastic-y soy that soaked up spicy oil like a sponge.<br> This is another after-school memory of mine: I<br> was never introduced to this unhealthy snack by my parents <br>until I made friends and learned to keep secrets. <br>I’m probably gonna die at 50, aren’t I? </div>
+
+
+    <div id="CVG"><img src="53.jpeg" ></div>
+
+    <!-- originals -->
+    <div id="homeDelivery">📍Home Delivery</div>
+
+
+    <div id="welcomeHome">Welcome Home! The most authentic Asian experience</div>
+
+ 
+    <div id="image100"><img src="100.png" width="180px" height="150px"></div>
+
+ 
+    <div id="imageSearch"><img src="search.png" width="600px" height="150px"></div>
+
+
+ 
+    <div id="imageCart"><img src="cart.png" width="70px" height="70px"></div>
+
+ 
+    <div id="categories">Categories</div>
+
+ 
+    <div id="deals">Deals</div>
+
+ 
+    <div id="whitePeopleMenu">White People Menu</div>
+
+ 
+    <div id="codeOffer">Code:[family's disappointment] $2 on Orders $109</div>
+
+ 
+    <div id="imageChicken"><img src="chicken.jpeg" width="300px" height="300px"></div>
+ 
+    <div id="imagePork"><img src="pork.jpg" width="300px" height="300px"></div>
+
+ 
+    <div id="imageDumpling"><img src="dumpling.jpeg" width="300px" height="300px"></div>
+
+
+    <div id= "imageBreakfast"><img src="breakfast.jpg" width= "300px" height="300px"></div>
+
+
+    <div id="dishOfTheWeek">Dish of the Week: 仁义道德 <br> Curious about the ingredients?</div>
+
+
+    <a href="https://zolimacitymag.com/forgotten-hong-kong-icon-the-reinvention-of-the-bamboo-steamer/"><div id="imageSteamer"><img src="steamer.jpeg" width="300px" height="300px"></div></a>
+
+ 
+    <a href="https://www.youtube.com/watch?v=BvfcRR3PZYE"><div id= "imageDishwasher"><img src="dishwasher.jpg" width="300px" height="300px"></div></a>
+
+ 
+    <a href="https://www.163.com/dy/article/GCFE81Q50532D4MK.html"><div id="imageChopsticks"><img src="chopsticks.jpg" width="300px" height="300px"></div></a>
+
+ 
+    <a href="https://www.52hrtt.com/kr/n/w/info/K1715393247910"><div id="imagePan"><img src="pan.jpg" width="300px" height="300px"></div></a>
+
+
+    <div id="chinaDirect">China Direct</div>
+
+
+    <div id="imageTendon"><img src="tendon.jpg" width="300px" height="300px"></div>
+
+
+    <div id="imageInstestine"><img src="instestine.jpeg" width="300px" height="300px"></div>
+
+
+    <div id="imageSausage"><img src="suasage.jpg" width="300px" height="300px"></div>
+
+
+    <div id="imageSpicy"><img src="spicy.jpg" width="300px" height="300px"></div>
+
+    
+    <div id="claimGiftVoucher">Claim Gift Voucher!</div>
+
+    <div id="happyCustomers">Hear from our happy customers!</div>
+
+
+    <div id="imageCustomer1">"First thing I smell when I go in Aisan100—FISH! Just like the markets back home! Aiya, this is how you know it’s a real Chinese supermarket, not like those big American stores with no ‘soul.’ Only bad thing? No haggling with the auntie for a better price…be more flexible!
+        <br>It got all the good brands too, not those fake Western ones. And the snack aisle? Wah, like heaven! Got shrimp chips, haw flakes, White Rabbit candy—aiya, all the things I wanted to eat when I was a kid but couldn’t afford! I feel so bougie!
+        <br>The produce section… hmmm, not exactly like home, but still got my Chinese cabbage, garlic chives, even winter melon! Good, good, young people here can still learn to cook proper meals, not panda express all the time.Good, good. Next time I bring my own trolley, buy even more!"
+        </div>
+
+    <div id="imageCustomer2">"Aisan100 is pretty decent. They have a lot of the ingredients I miss, like Lao Gan Ma, all the different types of noodles, and even frozen dumplings and baozi, which is great when I’m too lazy to cook from scratch.
+        <br>My cooking never comes close to tasting like my mom's anyway. I think it's the ingredients.
+        <br>The prices are a bit high though. It’s definitely cheaper than HMart, but still not as affordable as what I’d pay back home. The vegetables are fresh, but a little more expensive than I expected. I just can’t help but doing the conversion rate math in my head.
+        <br> Overall, it’s not perfect, but it’s nice to have a place where I can find familiar food and snacks. I’ll probably keep coming back, just need to keep an eye on my spending."
+        </div>
+
+    <div id="imageCustomer3">"Aisan100 is like a hidden gem for anyone who’s obsessed with all things China. 😍 From the moment I walked in, I could feel the authenticity—the smell of fish and soy sauce hit me right in the face. It’s like being transported straight to Beijing (even though I’ve never been, but you know, it’s on my bucket list!). 🧳🌏
+        <br>The snacks, OMG. I grabbed a few bags of those crispy seaweed snacks, and of course, a jar of Lao Gan Ma, cuz I definitely have that on hand to impress my friends at dinner parties. I’m gonna make the tiktok famous cucumber salad! 
+        <br>And don’t even get me started on the tea selection—I feel so cultured just picking out jasmine and oolong like I’m some sort of Chinese tea connoisseur. 🍵✨
+        <br>Anyway, 10/10 would recommend for anyone looking to live their best ‘China expert’ life without ever going into the sus neighborhoods. 😉”
+        
+        
+        </div>
+
+        <a href="index1.html"><div id="aboutUs">About Us | Contact Us | Loyalty Program</div></a>
+
+
+    <div id="image100Again"><img src="100.png" width="180px" height="130px"></div>
+
+    <div id="imageChiren"><img src="chiren1.jpeg" alt="Full Width Image"></div>
+
+    <div id="imageMoral"><img src="moral.jpeg" alt="Rounded Border" style="border: 13px solid green; border-radius: 10px;" width="220px" height="60px"></div>
+    <div id="imageMoral1"><img src="moral.jpeg" alt="Rounded Border" style="border: 13px solid green; border-radius: 10px;" width="220px" height="60px"></div>
+    <div id="imageMoral2"><img src="moral.jpeg" alt="Rounded Border" style="border: 13px solid green; border-radius: 10px;" width="220px" height="60px"></div>
+    <div id="imageMoral3"><img src="moral.jpeg" alt="Rounded Border" style="border: 13px solid green; border-radius: 10px;" width="220px" height="60px"></div>
+ 
+
+    <script>
+
+        const objectX = document.getElementById("categories");
+        const contentY = document.getElementById("CT");
+
+        objectX.addEventListener("click", function() {
+            contentY.style.display = (contentY.style.display === "none" || contentY.style.display === "") ? "block" : "none";
+        });
+
+        const objectA = document.getElementById("whitePeopleMenu");
+        const contentB = document.getElementById("WPM");
+
+        objectA.addEventListener("click", function() {
+            contentB.style.display = (contentB.style.display === "none" || contentB.style.display === "") ? "block" : "none";
+        });
+
+
+        const objectC = document.getElementById("deals");
+        const contentD = document.getElementById("DL");
+
+        objectC.addEventListener("click", function() {
+            contentD.style.display = (contentD.style.display === "none" || contentD.style.display === "") ? "block" : "none";
+        });
+
+
+
+
+
+
+        const objectE = document.getElementById("imageSearch");
+        const contentF = document.getElementById("iS");
+
+        objectE.addEventListener("click", function() {
+            contentF.style.display = (contentF.style.display === "none" || contentF.style.display === "") ? "block" : "none";
+        });
+
+
+
+
+
+
+        const objectG = document.getElementById("imageTendon");
+        const contentH = document.getElementById("TD");
+
+        objectG.addEventListener("click", function() {
+            contentH.style.display = (contentH.style.display === "none" || contentH.style.display === "") ? "block" : "none";
+        });
+
+
+
+
+
+
+        const objectI = document.getElementById("imageInstestine");
+        const contentJ = document.getElementById("IT");
+
+        objectI.addEventListener("click", function() {
+            contentJ.style.display = (contentJ.style.display === "none" || contentJ.style.display === "") ? "block" : "none";
+        });
+
+
+
+
+
+
+        const objectK = document.getElementById("imageSausage");
+        const contentL = document.getElementById("SS");
+
+        objectK.addEventListener("click", function() {
+            contentL.style.display = (contentL.style.display === "none" || contentL.style.display === "") ? "block" : "none";
+        });
+
+
+
+
+
+
+        const objectM = document.getElementById("imageSpicy");
+        const contentN = document.getElementById("SP");
+
+        objectM.addEventListener("click", function() {
+            contentN.style.display = (contentN.style.display === "none" || contentN.style.display === "") ? "block" : "none";
+        });
+
+
+        const objectO = document.getElementById("aboutUs");
+        const contentP = document.getElementById("iS1");
+
+        objectO.addEventListener("click", function() {
+            contentP.style.display = (contentP.style.display === "none" || contentP.style.display === "") ? "block" : "none";
+        });
+
+
+
+
+
+        function checkScreenSize() {
+            const isSmallScreen = window.matchMedia('(max-width: 1400px)');
+
+            if (isSmallScreen.matches) {
+                alert("Aiiiiya you do the first step wrong la! Small screen bad for your eye, yes?");
+            }
+        }
+        checkScreenSize();
+        window.addEventListener('resize', checkScreenSize);
+
+
+
+
+
+        function remindUser() {
+            const messages = [
+                "Are you still shopping? Go do homework!",
+                "Don't matter how much shopping you do! This ain't home!",
+                "Focus! Shopping can wait, but your midterm can't!"
+            ];
+
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+
+            alert(randomMessage);
+        }
+
+        setInterval(remindUser, 60000);
+
+
+
+        const texts = [
+            "This is food, not love",
+            "Full cart, empty promises",
+            "Can't find home at the bottom of a cart"
+        ];
+
+        document.getElementById('imageCart').addEventListener('click', function() {
+            const randomText = texts[Math.floor(Math.random() * texts.length)];
+
+            document.getElementById('SC').innerText = randomText;
+        });
+
+
+
+        let timer;
+        let seconds = 0;
+        const timerDisplay = document.getElementById("timerDisplay");
+        const startButton = document.getElementById("DL");
+
+        startButton.addEventListener("click", function() {
+            clearInterval(timer);
+            seconds = 0;
+
+            timer = setInterval(() => {
+                seconds++;
+                timerDisplay.textContent = `Time: ${seconds}s`;
+            }, 1000);
+        });
+
+    </script>
+</body>
+</html>
