@@ -5,9 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website Layout</title>
     <style>
+
+
+#glitchVideo {
+    position:relative;
+    display: none;  
+    filter: contrast(1.5) brightness(1.2) saturate(2) blur(2px);  
+    z-index: 10009;
+    width: 80%;
+    left: 10%;
+    top: 2085px; 
+    transition: filter 0.3s ease-in-out;
+
+    
+}
+
+#glitchVideo:hover {
+    filter: blur(0px);
+
+}
+
+
+        .content {
+            height: 150vh;
+            background: lightblue;
+            padding: 20px;
+        }
+
+        video {
+            width: 100%; 
+            display: none; 
+            height: auto;
+        }
+
+
         body {
             position: relative;
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 200vh; 
         }
         .image-box, .text-box {
             position: absolute;
@@ -117,7 +154,7 @@
     <div class="image-box"><img src="customer.jpg" width= "300px" height="300px"></div>
     <div class="image-box"><img src="customerr.jpg" width= "300px" height="300px"></div>
     <div class="image-box"><img src="customerrr.jpg" width= "300px" height="300px"></div>
-    <div class="text-box">A pathetic, overpriced attempt to reminiscence<br> or perhaps the original was undervalued</div>
+    <div class="text-box">A pathetic, overpriced attempt to reminiscence<br> or perhaps the original was undervalued<br>but keep DIGGING</div>
     <div class="image-box"><img src="100.png" width="180px" height="130px"></div>
     <div class="image-box"><img src="chiren1.jpeg" alt="Full Width Image" style="width: 100vw;  height:120px;"></div>
     <div class="image-box"><img src="moral.jpeg" alt="Rounded Border" style="border: 5px solid green; border-radius: 10px;" width="220px" height="60px"         filter: blur(100px); ></div>
@@ -129,5 +166,34 @@
     <div class="image-box"><img src="moral.jpeg" alt="Rounded Border" style="border: 5px solid green; border-radius: 10px;" width="220px" height="60px"filter: blur(100px);></div>
     <div class="image-box"><img src="moral.jpeg" alt="Rounded Border" style="border: 5px solid green; border-radius: 10px;" width="220px" height="60px"filter: blur(100px);></div>
  
+
+    <div style="height: 100vh;">Keep scrolling to reach the video!</div>
+
+    <video id="glitchVideo" controls>
+        <source src="interior.mp4" type="video/mp4" autoplay loop muted>
+        Your browser does not support the video tag.
+    </video>
+
+    <div style="height: 100vh;">Almost there!</div>
+    
+<script>
+let scrolledToEnd = false;
+
+window.addEventListener("scroll", function () {
+    const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const currentScroll = window.scrollY;
+
+    if (currentScroll >= scrollableHeight) {
+        if (!scrolledToEnd) {
+            scrolledToEnd = true; 
+        } else {
+            
+            document.getElementById("glitchVideo").style.display = "block";
+        }
+    }
+});
+
+    </script>
+
 </body>
 </html>
